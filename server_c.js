@@ -26,22 +26,18 @@ const server = http.createServer((request, response) => {
     */
 
     if(pathname === "/") {
-        response.end("Welcome to our home page. Your value query is ${query.H} ${query.value} ${query.v}");
-    } 
-
-    if(pathname === "/about") {
-        response.end(`We are a cool company. Your value query is ${query.H} ${query.value} ${query.v}. and my name is ${query.name}`)
+        response.end(`Welcome to our home page. Your value query is ${query.H} ${query.value} ${query.v}`);
+    } else if(pathname === "/about") {
+        response.end(`We are a cool company. Your value query is ${query.H} ${query.value} ${query.v}. and my name is ${query.name}`);
     } else {
         response.statusCode = 404;
-        response.end("Page Not found, so sorry")
+        response.end("Page Not found, so sorry");
     }
 
-
-})
+});
 
 const PORT = 8082;
 
 server.listen(PORT, () => {
-
-    console.log("Server running at port", PORT)
-})
+    console.log(`Server running at port ${PORT}`);
+});
